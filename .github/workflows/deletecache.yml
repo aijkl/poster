@@ -1,0 +1,23 @@
+name: DeleteCache
+on: [ workflow_dispatch ]
+jobs:        
+  Main:      
+    name: DeleteCache
+    runs-on: ubuntu-latest
+    steps:
+      - name: Init
+        run: |          
+          wget https://dot.net/v1/dotnet-install.sh
+          sudo bash dotnet-install.sh
+          sudo apt-get install -y git
+      - name: GitClone          
+        run: git clone https://github.com/aijkl/DeleteCache.git               
+      - name: Build
+        run: |
+          cd DeleteCache/CloudFlare          
+          sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj
+      - name: Run                   
+        run: |
+           cd /home/runner/work/poster/poster/DeleteCache/CloudFlare/bin/Debug/netcoreapp3.0/                   
+           sudo /home/runner/.dotnet/dotnet DeleteCache.dll ${{ secrets.APPSETTINGS }}
+                           

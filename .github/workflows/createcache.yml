@@ -1,0 +1,40 @@
+name: CreateCache
+on:
+  schedule:    
+    - cron:  '*/5 * * * *'
+  push:
+    branches:
+      - master
+jobs:        
+  Main:      
+    name: Create
+    runs-on: ubuntu-latest   
+    steps:
+      - name : Init
+        run: |
+          mkdir public
+          echo "<center><h1>404 NOT FOUND</h1></center>" > public/404.html
+          echo poster.orange-mikan.org > public/CNAME
+      - name: DownLoad
+        run: |
+          cd public
+          curl -L -o meroom.jpeg "http://drive.google.com/uc?export=view&id=1BQlHLlQlyaAOWF3PHdy0DlzOc_-_r86a"
+          curl -L -o vrchatbeginner.jpeg "http://drive.google.com/uc?export=view&id=1dOp01U3ekG6D_bMhY0FZK4BNzQYbRgb0"
+          curl -L -o vrchatworld.jpeg "http://drive.google.com/uc?export=view&id=1pAKT1DjmCLD_ny_AWmnFuQASdNJ795hL"
+          curl -L -o vrchatworld2.jpeg "http://drive.google.com/uc?export=view&id=1sCMNGAaSmVeTWCo23bp8Qk-fO2E2C0KJ"
+          curl -L -o vrchatworld3.jpeg "http://drive.google.com/uc?export=view&id=1BWLb4CEPr342O7ydqG0KO_7UsAlSy5Bh"
+          curl -L -o vrchatworld_quest.jpeg "http://drive.google.com/uc?export=view&id=1EOJAHaTmvV99OHHtg-nYOkGaG064pPa3"
+          curl -L -o booth2.jpeg "http://drive.google.com/uc?export=view&id=1jUE-dOFRgOb63WDXKwHTpjUIW42N0dqO"                    
+          curl -L -o booth.jpeg "http://drive.google.com/uc?export=view&id=1SYXwPtaB6zBSmr9gvdnitir8LReCrJRN"  
+          curl -L -o booth2.jpeg "http://drive.google.com/uc?export=view&id=1jUE-dOFRgOb63WDXKwHTpjUIW42N0dqO"                            
+      - name: gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+               github_token: ${{ secrets.GITHUB_TOKEN }}
+               publish_dir: ./public
+               force_orphan: false
+      - name: Invoke DeleteCache.yml
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: DeleteCache
+          token: ${{ secrets.PERSONAL_TOKEN }}
