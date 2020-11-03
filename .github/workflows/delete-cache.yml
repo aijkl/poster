@@ -14,11 +14,11 @@ jobs:
         uses: actions/checkout@v2
         with:
            repository: aijkl/delete-cache
-           token: ${{ secrets.PERSONAL_TOKEN }}              
-           path: /home/runner/work/poster/poster
+           token: ${{ secrets.PERSONAL_TOKEN }}                         
       - name: dotnet-build
         run: |
-          cd /home/runner/work/poster/poster/delete-cache/DeleteCache
+          echo $GITHUB_WORKSPACE
+          cd $GITHUB_WORKSPACE/delete-cache/DeleteCache
           sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release          
       - name: run
         run: |                                        
