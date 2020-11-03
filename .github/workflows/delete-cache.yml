@@ -13,7 +13,7 @@ jobs:
       - name: git-clone
         uses: actions/checkout@v2
         with:
-           repository: aijkl/poster
+           repository: aijkl/delete-cache
            token: ${{ secrets.PERSONAL_TOKEN }}              
       - name: dotnet-build
         run: |
