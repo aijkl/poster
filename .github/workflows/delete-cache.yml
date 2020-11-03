@@ -16,8 +16,9 @@ jobs:
            repository: aijkl/delete-cache
            token: ${{ secrets.PERSONAL_TOKEN }}                         
       - name: dotnet-build
-        run: |
-          echo $GITHUB_WORKSPACE
+        run: |          
+          cd $GITHUB_WORKSPACE
+          ls
           cd $GITHUB_WORKSPACE/delete-cache/DeleteCache
           sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release          
       - name: run
