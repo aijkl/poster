@@ -12,10 +12,10 @@ jobs:
           sudo apt-get install -y git
       - name: git-clone
         run: |
-          git clone https://github.com/aijkl/DeleteCache.git                
+          git clone https://github.com/aijkl/delete-cache.git                
       - name: dotnet-build
         run: |
-          cd DeleteCache/DeleteCache          
+          cd delete-cache/DeleteCache          
           sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release          
       - name: run
         run: |                                        
