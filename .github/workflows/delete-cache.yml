@@ -11,18 +11,14 @@ jobs:
           sudo bash dotnet-install.sh
           sudo apt-get install -y git
       - name: git-clone
-        uses: actions/checkout@v2
-        with:
-           repository: aijkl/delete-cache
-           token: ${{ secrets.PERSONAL_TOKEN }}                         
+        run: |
+          git clone https://github.com/aijkl/delete-cache.git                
       - name: dotnet-build
-        run: |          
-          cd ${{ GITHUB_WORKSPACE }}
-          ls
-          cd $GITHUB_WORKSPACE/delete-cache/DeleteCache
+        run: |
+          cd delete-cache/DeleteCache          
           sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release          
       - name: run
         run: |                                        
-          cd //home/runner/work/poster/poster/delete-cache/DeleteCache/bin/Release/netcoreapp3.0/                   
-          sudo /home/runner/.dotnet/dotnet DeleteCache.dll ${{ secrets.APPSETTINGS }}   
+          cd /home/runner/work/poster/poster/delete-cache/DeleteCache/bin/Release/netcoreapp3.0/                   
+          sudo /home/runner/.dotnet/dotnet DeleteCache.dll ${{ secrets.APPSETTINGS }}    
                            
