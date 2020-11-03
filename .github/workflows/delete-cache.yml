@@ -15,13 +15,13 @@ jobs:
         with:
            repository: aijkl/delete-cache
            token: ${{ secrets.PERSONAL_TOKEN }}              
-           path: /home/runner/work/
+           path: /home/runner/work/poster/poster
       - name: dotnet-build
         run: |
-          cd delete-cache/DeleteCache
+          cd /home/runner/work/poster/poster/delete-cache/DeleteCache
           sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release          
       - name: run
         run: |                                        
-          cd /home/runner/work/delete-cache/DeleteCache/bin/Release/netcoreapp3.0/                   
+          cd //home/runner/work/poster/poster/delete-cache/DeleteCache/bin/Release/netcoreapp3.0/                   
           sudo /home/runner/.dotnet/dotnet DeleteCache.dll ${{ secrets.APPSETTINGS }}   
                            
