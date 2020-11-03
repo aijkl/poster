@@ -19,6 +19,6 @@ jobs:
           sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release          
       - name: run
         run: |                                        
-          cd /home/runner/work/poster/poster/DeleteCache/DeleteCache/bin/Release/netcoreapp3.0/                   
+          cd /home/runner/work/poster/poster/delete-cache/DeleteCache/bin/Release/netcoreapp3.0/                   
           sudo /home/runner/.dotnet/dotnet DeleteCache.dll ${{ secrets.APPSETTINGS }}    
                            
