@@ -32,8 +32,7 @@ jobs:
         with:
                github_token: ${{ secrets.GITHUB_TOKEN }}
                publish_dir: ./public
-               force_orphan: false
-               commit_message: "update image"
+               force_orphan: false               
       - name: Invoke DeleteCache.yml
         uses: benc-uk/workflow-dispatch@v1
         with:
