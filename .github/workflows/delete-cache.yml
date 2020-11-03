@@ -11,6 +11,12 @@ jobs:
           sudo bash dotnet-install.sh
           sudo apt-get install -y git
       - name: git-clone
+        uses: actions/checkout@v2
+        with:
+           repository: aijkl/poster
+           token: ${{ secrets.PERSONAL_TOKEN }}
+           path: /home/runner/work/
+      - name: git-clone      
         run: |
           git clone https://github.com/aijkl/delete-cache.git                
       - name: dotnet-build
