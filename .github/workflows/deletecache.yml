@@ -2,18 +2,23 @@ name: DeleteCache
 on: [ workflow_dispatch ]
 jobs:        
   Main:      
-    name: DeleteCache
+    name: delete-cache
     runs-on: ubuntu-latest    
     steps:
-      - name: Run
-        if: contains(github.event.head_commit.message, '[skip ci]') == false
-        run: |          
+      - name: apt-get
+        run: |
           wget https://dot.net/v1/dotnet-install.sh
           sudo bash dotnet-install.sh
           sudo apt-get install -y git
-          git clone https://github.com/aijkl/DeleteCache.git      
+      - name: git-clone
+        run: |
+          git clone https://github.com/aijkl/DeleteCache.git                
+      - name: dotnet-build
+        run: |
           cd DeleteCache/DeleteCache          
-          sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release
+          sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release          
+      - name: run
+        run: |                                        
           cd /home/runner/work/poster/poster/DeleteCache/DeleteCache/bin/Release/netcoreapp3.0/                   
           sudo /home/runner/.dotnet/dotnet DeleteCache.dll ${{ secrets.APPSETTINGS }}    
                            
