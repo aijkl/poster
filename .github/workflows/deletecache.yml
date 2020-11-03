@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest    
     steps:
       - name: Run
-        if: "! contains(github.event.head_commit.message, '[ci skip]')"
+        if: "! contains(github.event.head_commit.message, '[]')"
         run: |          
           wget https://dot.net/v1/dotnet-install.sh
           sudo bash dotnet-install.sh
