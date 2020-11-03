@@ -17,7 +17,7 @@ jobs:
            token: ${{ secrets.PERSONAL_TOKEN }}              
       - name: dotnet-build
         run: |
-          cd /home/runner/work/poster/poster/delete-cache/DeleteCache
+          cd /home/runner/work/poster/poster/.git/delete-cache/DeleteCache
           sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release          
       - name: run
         run: |                                        
