@@ -15,7 +15,7 @@ jobs:
         run: git clone https://github.com/aijkl/DeleteCache.git               
       - name: Build
         run: |
-          cd DeleteCache/CloudFlare          
+          cd DeleteCache/DeleteCache          
           sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj
       - name: Run                   
         run: |
