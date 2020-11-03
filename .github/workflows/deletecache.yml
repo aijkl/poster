@@ -16,7 +16,7 @@ jobs:
       - name: Build
         run: |
           cd DeleteCache/DeleteCache          
-          sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj
+          sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release
       - name: Run                   
         run: |
            cd /home/runner/work/poster/poster/DeleteCache/DeleteCache/bin/Debug/netcoreapp3.0/                   
