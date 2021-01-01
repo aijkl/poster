@@ -16,7 +16,6 @@ jobs:
           sudo apt-get install ffmpeg -y
           mkdir public
           echo "<center><h1>404 NOT FOUND</h1></center>" > public/404.html
-          echo poster.orange-mikan.org > public/CNAME
       - name: DownLoad
         run: |
           cd public                                                            
