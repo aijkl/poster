@@ -9,7 +9,7 @@ on:
 jobs:        
   Main:      
     name: Create
-    runs-on: ubuntu-latest   
+    runs-on: ubuntu-18.04
     steps:
       - name : Other
         run: |
