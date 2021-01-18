@@ -29,7 +29,7 @@ jobs:
           #curl -L -o vrchatworld.jpeg "https://private.orange-mikan.org/ja/vrchatworld.jpeg"
           #curl -L -o vrchatworld2.jpeg "https://private.orange-mikan.org/ja/vrchatworld2.jpeg"
           #curl -L -o vrchatworld3.jpeg "https://private.orange-mikan.org/ja/vrchatworld3.jpeg"
-          curl -L -o shogi.jpeg "https://private.orange-mikan.org/ja/shogi.jpeg"
+          #curl -L -o shogi.jpeg "https://private.orange-mikan.org/ja/shogi.jpeg"
                               
           ffmpeg -framerate 1 -i booth.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 booth.mp4                    
           ffmpeg -framerate 1 -i booth2.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 booth2.mp4                   
@@ -39,7 +39,7 @@ jobs:
           #ffmpeg -framerate 1 -i vrchatworld.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 vrchatworld.mp4
           #ffmpeg -framerate 1 -i vrchatworld2.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 vrchatworld2.mp4
           #ffmpeg -framerate 1 -i vrchatworld3.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 vrchatworld3.mp4                    
-          ffmpeg -framerate 1 -i shogi.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 shogi.mp4                    
+          #ffmpeg -framerate 1 -i shogi.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 shogi.mp4                    
           
           sudo rm *.jpeg          
       - name: gh-pages
