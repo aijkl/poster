@@ -16,6 +16,7 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install ffmpeg -y
           mkdir public
+          mkdir public/en
           echo "<center><h1>404 NOT FOUND</h1></center>" > public/404.html
           echo clone.orange-mikan.org > public/CNAME
       - name: DownLoad
@@ -24,6 +25,7 @@ jobs:
           curl -L -o booth.jpeg "https://private.orange-mikan.org/ja/booth.jpeg"
           curl -L -o booth2.jpeg "https://private.orange-mikan.org/ja/booth2.jpeg"
           curl -L -o timeline.jpeg "https://private.orange-mikan.org/ja/timeline.jpeg"
+          curl -L -o vrchat.jpeg "https://private.orange-mikan.org/en/vrchat.jpeg"
           #curl -L -o timeline2.jpeg "https://private.orange-mikan.org/ja/timeline2.jpeg"
           #curl -L -o timeline3.jpeg "https://private.orange-mikan.org/ja/timeline3.jpeg"
           #curl -L -o vrchatworld.jpeg "https://private.orange-mikan.org/ja/vrchatworld.jpeg"
