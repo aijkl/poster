@@ -22,8 +22,7 @@ jobs:
       - name: DownLoad
         run: |
           cd public                                                            
-          echo readlinf -f public/en >> $EN_PATH
-          
+          echo "{readlinf -f public/en}" >> $EN_PATH          
           curl -L -o booth.jpeg "https://private.orange-mikan.org/ja/booth.jpeg"
           curl -L -o booth2.jpeg "https://private.orange-mikan.org/ja/booth2.jpeg"
           curl -L -o timeline.jpeg "https://private.orange-mikan.org/ja/timeline.jpeg"
