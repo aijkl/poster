@@ -16,6 +16,7 @@ jobs:
       - name: dotnet-build
         run: |
           cd delete-cache/DeleteCache          
+          find -path /home/runner dotnet
           sudo /home/runner/.dotnet/dotnet build DeleteCache.csproj --configuration Release          
       - name: run
         run: |                                        
