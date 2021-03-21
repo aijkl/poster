@@ -20,5 +20,5 @@ jobs:
       - name: run
         run: |                                        
           cd /home/runner/work/poster/poster/delete-cache/DeleteCache/bin/Release/netcoreapp3.0/                   
-          sudo /home/runner/.dotnet/dotnet DeleteCache.dll ${{ secrets.APPSETTINGS }}    
+          sudo dotnet DeleteCache.dll ${{ secrets.APPSETTINGS }}    
                            
