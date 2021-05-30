@@ -26,6 +26,7 @@ jobs:
           curl -L -o timeline.jpeg "https://private.orange-mikan.org/ja/timeline.jpeg"
           curl -L -o en-vrchat.jpeg "https://private.orange-mikan.org/en/vrchat.jpeg"
           curl -L -o vrchat.jpeg "https://private.orange-mikan.org/ja/vrchat.jpeg"
+          curl -L -o tom0k1.jpeg "https://private.orange-mikan.org/ja/tom0k1.jpeg"
           #curl -L -o timeline2.jpeg "https://private.orange-mikan.org/ja/timeline2.jpeg"
           #curl -L -o timeline3.jpeg "https://private.orange-mikan.org/ja/timeline3.jpeg"
           #curl -L -o vrchatworld.jpeg "https://private.orange-mikan.org/ja/vrchatworld.jpeg"
@@ -38,6 +39,7 @@ jobs:
           ffmpeg -framerate 1 -i timeline.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 timeline.mp4
           ffmpeg -framerate 1 -i en-vrchat.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 en-vrchat.mp4
           ffmpeg -framerate 1 -i vrchat.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 vrchat.mp4
+          ffmpeg -framerate 1 -i tom0k1.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 tom0k1.mp4
           #ffmpeg -framerate 1 -i timeline2.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 timeline2.mp4
           #ffmpeg -framerate 1 -i timeline3.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 timeline3.mp4
           #ffmpeg -framerate 1 -i vrchatworld.jpeg -vframes 1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -pix_fmt yuv420p -crf 1 -r 60 vrchatworld.mp4
